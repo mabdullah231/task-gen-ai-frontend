@@ -193,7 +193,7 @@ const Register = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:outline-none transition duration-200"
+                className="w-full bg-orange-900 text-white py-2 px-4 rounded-lg hover:bg-orange-700  focus:ring-2 focus:ring-gray-500 focus:outline-none transition duration-200"
               >
                 Register
               </button>
@@ -230,7 +230,7 @@ const Register = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:outline-none transition duration-200"
+                className="w-full bg-orange-900 text-white py-2 px-4 rounded-lg hover:bg-orange-700  focus:ring-2 focus:ring-gray-500 focus:outline-none transition duration-200"
               >
                 Verify
               </button>

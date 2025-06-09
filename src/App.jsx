@@ -3,7 +3,7 @@ import Layout from "./screens/Layout";
 import Helpers from "./Config/Helpers";
 import { Login, Register, ForgetPassword } from "./screens";
 import { AdminDashboard,AdminLayout, AdminSettings, AdminUsers } from "./screens/admin";
-import { UserDashboard, UserLayout } from "./screens/user";
+import { UserDashboard, UserLayout, UserPlans, UserSettings, UserTaskBot } from "./screens/user";
 
 import './app.css'
 
@@ -125,6 +125,33 @@ function App() {
               <Auth allowedRoles={[2]}>
               {/* // <Auth isAuth={false}> */}
                 <UserDashboard />
+              </Auth>
+            }
+          />
+          <Route
+            path="taskbot"
+            element={
+              <Auth allowedRoles={[2]}>
+              {/* // <Auth isAuth={false}> */}
+                <UserTaskBot />
+              </Auth>
+            }
+          />
+          <Route
+            path="plans"
+            element={
+              <Auth allowedRoles={[2]}>
+              {/* // <Auth isAuth={false}> */}
+                <UserPlans />
+              </Auth>
+            }
+          />
+          <Route
+            path="settings"
+            element={
+              <Auth allowedRoles={[2]}>
+              {/* // <Auth isAuth={false}> */}
+                <UserSettings />
               </Auth>
             }
           />

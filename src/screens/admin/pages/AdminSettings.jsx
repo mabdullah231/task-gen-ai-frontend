@@ -28,7 +28,7 @@ const AdminSettings = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `${Helpers.apiUrl}admin/openai/view-config`,
+          `${Helpers.apiUrl}admin/ai/view-config`,
           Helpers.getAuthHeaders()
         );
         

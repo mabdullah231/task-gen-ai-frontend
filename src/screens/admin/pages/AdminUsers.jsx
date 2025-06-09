@@ -8,10 +8,9 @@ const AdminUsers = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [deleteConfirmation, setDeleteConfirmation] = useState(null);
-  const authUser = Helpers.getAuthUser(); // Get the authenticated user
+  const authUser = Helpers.getAuthUser(); 
   
 
-  // Fetch all users when component mounts
   useEffect(() => {
     fetchUsers();
   }, []);

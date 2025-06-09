@@ -35,6 +35,7 @@ const Login = () => {
       Helpers.toast("success", "Login successful.");
       Helpers.setItem("token", response.data.token); // Save token
       Helpers.setItem("user", JSON.stringify(response.data.user)); // Save user data
+      Helpers.setItem("loginTimestamp", Date.now());
 
       // Redirect based on user type
       const userType = response.data.user.user_type;
@@ -63,76 +64,74 @@ const Login = () => {
   };
 
   return (
-
-      <div className="w-full  flex items-center justify-center p-8">
-        <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Login</h2>
-          <form onSubmit={handleLogin}>
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
-            <div className="my-3 text-right">
-              <p className="text-sm text-gray-600">
-                Forgot Your{" "}
-                <Link
-                  to="/forget-password"
-                  className="text-blue-600 hover:underline"
-                >
-                  Password?
-                </Link>
-              </p>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:outline-none transition duration-200"
+    <div className="w-full  flex items-center justify-center p-8">
+      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">Login</h2>
+        <form onSubmit={handleLogin}>
+          <div className="mb-6">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Login
-            </button>
-          </form>
-          <div className="mt-6 text-center">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div className="my-3 text-right">
             <p className="text-sm text-gray-600">
-              Don't have an account?{" "}
-              <Link to="/register" className="text-blue-600 hover:underline">
-                Register
+              Forgot Your{" "}
+              <Link
+                to="/forget-password"
+                className="text-blue-600 hover:underline"
+              >
+                Password?
               </Link>
             </p>
           </div>
+          <button
+            type="submit"
+            className="w-full bg-orange-900 text-white py-2 px-4 rounded-lg hover:bg-orange-700 focus:ring-2 focus:ring-gray-500 focus:outline-none transition duration-200"
+          >
+            Login
+          </button>
+        </form>
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{" "}
+            <Link to="/register" className="text-blue-600 hover:underline">
+              Register
+            </Link>
+          </p>
         </div>
       </div>
-
+    </div>
   );
 };
 

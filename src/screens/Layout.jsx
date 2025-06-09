@@ -3,37 +3,43 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-gray-50">
-      {/* Left Side - Dynamic Content */}
-      <div className="w-full md:w-1/2 flex items-center justify-center p-8">
-        <Outlet /> {/* This will render the Login, Register, or ForgetPassword component */}
-      </div>
-
-      {/* Right Side - Plant Doc Description */}
-      <div className="w-full md:w-1/2 bg-gray-800 flex items-center justify-center p-8">
-        <div className="text-white max-w-md">
-          <h1 className="text-4xl font-bold mb-4">Plant Doc</h1>
-          <p className="text-lg mb-6">
-            Plant Doc is your ultimate companion for managing and understanding
-            various plant types. Whether you're a botanist, gardener, or plant
-            enthusiast, Plant Doc provides you with the tools and knowledge to
-            care for your plants effectively.
+    <div className="min-h-screen flex flex-col md:flex-row bg-gradient-to-br from-zinc-900 to-zinc-800">
+      {/* Left Side - AI Application Description */}
+      <div className="w-full md:w-1/2 bg-orange-900 flex items-center justify-center p-8">
+        <div className="text-orange-50 max-w-md">
+          <h1 className="text-4xl font-bold mb-4 text-orange-300">
+            TaskAI Planner
+          </h1>
+          <p className="text-lg mb-6 text-orange-100">
+            Transform complexity into clarity with intelligent task
+            orchestration. Our AI seamlessly converts your project vision into
+            precise, actionable workflows with unprecedented accuracy.
           </p>
           <ul className="space-y-2">
-            <li className="flex items-center">
-              <span className="mr-2">🌱</span>
-              <span>Comprehensive plant database</span>
+            <li className="flex items-center text-orange-100">
+              <span className="mr-3 text-xl">🔥</span>
+              <span>Adaptive AI Task Generation</span>
             </li>
-            <li className="flex items-center">
-              <span className="mr-2">📚</span>
-              <span>Detailed care guides</span>
+            <li className="flex items-center text-orange-100">
+              <span className="mr-3 text-xl">⚙️</span>
+              <span>Intelligent Workflow Optimization</span>
             </li>
-            <li className="flex items-center">
-              <span className="mr-2">🔍</span>
-              <span>Advanced search and filtering</span>
+            <li className="flex items-center text-orange-100">
+              <span className="mr-3 text-xl">📊</span>
+              <span>Predictive Timeline Mapping</span>
+            </li>
+            <li className="flex items-center text-orange-100">
+              <span className="mr-3 text-xl">🚀</span>
+              <span>Advanced Reporting Capabilities</span>
             </li>
           </ul>
         </div>
+      </div>
+
+      {/* Right Side - Authentication and Input Form */}
+      <div className="w-full md:w-1/2 flex items-center justify-center p-8 bg-zinc-800/50">
+        <Outlet />{" "}
+        {/* This will render the Login, Register, or Input Form component */}
       </div>
     </div>
   );
